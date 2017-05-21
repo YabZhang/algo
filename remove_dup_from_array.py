@@ -81,17 +81,14 @@ def solution2(s):
     """
     j = 0
     for i in range(len(s)):
-        print('index', i, j)
-        if i > 2 and s[i] == s[i - 2]:
-            print(s[j], s[j - 1])
+        if j > 1 and s[i] == s[j - 2]:
             continue
-        # if i != j - 1:
-        s[j] = s[i]
+        if i != j - 1:
+            s[j] = s[i]
         j += 1
 
-    print(s, i, j)
-    s[j + 1:] = []
-    return j + 1
+    s[j:] = []
+    return j
 
 
 
